@@ -1,29 +1,6 @@
-function validaArray(arr, num) {
-    try{
-        if(!arr && !num) throw new ReferenceError ("Envie os parâmetros");
-    
-        if(typeof arr !== 'object') throw new TypeError ("Array precisa ser do tipo object")
-        
-        if(typeof arr !== 'number') throw new TypeError ("Array precisa ser do tipo number")
-        
-        if(arr.length !== num) throw new RangeError ("Tamanho Invalido")
-    
-        return arr
-    }
-    catch(e){
-        if(e instanceof ReferenceError){
-            console.log("Este erro é um referenceerror")
-            console.log(e.message)
-        } else if(e instanceof TypeError){
-            console.log("Este erro é um typeerror")
-            console.log(e.message)
-        } else if(e instanceof RangeError){
-            console.log("Este erro é um rangeerror")
-            console.log(e.message)
-        }else {
-            console.log("Ocorreu um tipo de eerro não esperado: " + e )
-        }
-    }
-}
+const NovoErro = new Error();
 
-console.log(validaArray([]))
+NovoErro.name = "Novo Erro";
+NovoErro.message = "Este erro nunca ocorreu"
+
+console.log(NovoErro())
